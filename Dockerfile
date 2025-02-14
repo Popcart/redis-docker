@@ -1,4 +1,10 @@
 FROM redis:latest
 
-# Expose Redis port (default is 6379)
+# Copy the redis.conf file from the repo to the container's config directory
+COPY redis.conf /usr/local/etc/redis/redis.conf
+
+# Expose Redis port
 EXPOSE 6379
+
+# Use the custom redis.conf to start Redis
+CMD ["redis-server", "/usr/local/etc/redis/redis.conf"]
