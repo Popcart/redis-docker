@@ -4,7 +4,7 @@ FROM redis:latest
 COPY redis.conf /usr/local/etc/redis/redis.conf
 
 # Expose Redis port
-EXPOSE 6380
+EXPOSE 6379
 
 # Use the custom redis.conf to start Redis
 CMD ["redis-server", "/usr/local/etc/redis/redis.conf"]
